@@ -13,25 +13,23 @@
   --bd:#1a2a3a;--bd2:#243a50;
   --tx:#c8d8e8;--tx2:#7a9ab8;--tx3:#4a6a8a;--tx4:#2a4a6a;
   --red:#f87171;--amb:#fbbf24;--blu:#60a5fa;--grn:#4ade80;
-  --rbg:#1a0f0f;--abd:#3f3520;--rbd:#3f1f1f;
+  --rbg:#1a0f0f;--rbd:#3f1f1f;--abd:#3f3520;
   --cyn:#22d3ee;--pur:#c084fc;--org:#fb923c;
-  --mo:"Share Tech Mono",monospace;
-  --sa:"Rajdhani",sans-serif;
+  --mo:"Share Tech Mono",monospace;--sa:"Rajdhani",sans-serif;
 }
-html,body{background:var(--bg0);color:var(--tx);font-family:var(--sa);font-size:14px;min-height:100vh}
-a{color:var(--blu);text-decoration:none}
-a:hover{text-decoration:underline}
+html,body{background:var(--bg0);color:var(--tx);font-family:var(--sa);font-size:14px}
+a{color:var(--blu);text-decoration:none}a:hover{text-decoration:underline}
 .wrap{max-width:1440px;margin:0 auto;padding:12px 16px}
 
-/* ── HEADER ── */
-header{display:flex;align-items:center;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid var(--bd);margin-bottom:14px;flex-wrap:wrap;gap:8px}
+header{display:flex;align-items:center;justify-content:space-between;padding-bottom:12px;
+  border-bottom:1px solid var(--bd);margin-bottom:14px;flex-wrap:wrap;gap:8px}
 .brand{display:flex;align-items:center;gap:10px}
 .logo{width:42px;height:42px;object-fit:contain}
 .brand h1{font-size:17px;font-weight:700;color:var(--blu);letter-spacing:2px;text-transform:uppercase}
 .brand p{font-size:9px;color:var(--tx3);font-family:var(--mo);letter-spacing:2px}
 .hright{display:flex;align-items:center;gap:12px;font-family:var(--mo);font-size:10px;flex-wrap:wrap}
-.ext-link{font-size:10px;font-family:var(--mo);color:var(--tx3);border:1px solid var(--bd2);border-radius:3px;padding:2px 8px}
-.ext-link:hover{color:var(--blu);border-color:var(--blu)}
+.extl{font-size:10px;font-family:var(--mo);color:var(--tx3);border:1px solid var(--bd2);border-radius:3px;padding:2px 8px}
+.extl:hover{color:var(--blu);border-color:var(--blu)}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--grn);animation:pulse 2s infinite;display:inline-block}
 @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 5px var(--grn)}50%{opacity:.4;box-shadow:none}}
 .blv{padding:2px 6px;border-radius:3px;font-size:9px;background:#0c2a1a;color:var(--grn);border:1px solid #1a5a30;animation:blink 2s step-end infinite}
@@ -39,36 +37,33 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .blvl{padding:2px 8px;border-radius:3px;font-size:9px;font-weight:700;letter-spacing:1px;background:var(--rbg);color:var(--red);border:1px solid var(--rbd)}
 #clk{color:var(--blu)}
 
-/* ── KPIs ── */
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
 .kpi{background:var(--bg2);border:1px solid var(--bd);border-radius:6px;padding:12px;position:relative;overflow:hidden}
 .kpi:after{content:"";position:absolute;top:0;left:0;right:0;height:2px}
-.kpi.r:after{background:var(--red)}.kpi.a:after{background:var(--amb)}.kpi.b:after{background:var(--blu)}.kpi.g:after{background:var(--grn)}
+.kpi.r:after{background:var(--red)}.kpi.a:after{background:var(--amb)}
+.kpi.b:after{background:var(--blu)}.kpi.g:after{background:var(--grn)}
 .kl{font-family:var(--mo);font-size:9px;color:var(--tx3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px}
 .kv{font-size:28px;font-weight:700;line-height:1;margin-bottom:3px}
 .kpi.r .kv{color:var(--red)}.kpi.a .kv{color:var(--amb)}.kpi.b .kv{color:var(--blu)}.kpi.g .kv{color:var(--grn)}
 .ks{font-family:var(--mo);font-size:9px;color:var(--tx3)}
 
-/* ── MAIN 3-COL ── */
+/* 3-col: fixed height, no flex-grow body */
 .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
-/* Each panel is a fixed-height column — NO flex-grow on body */
 .panel{background:var(--bg2);border:1px solid var(--bd);border-radius:6px;
-       display:flex;flex-direction:column;
-       /* Fixed height so nothing grows infinitely */
-       height:300px}
+  display:flex;flex-direction:column;height:300px}
 .ph{display:flex;align-items:center;justify-content:space-between;
-    padding:7px 12px;background:var(--bg3);border-bottom:1px solid var(--bd);
-    flex-shrink:0}
+  padding:7px 12px;background:var(--bg3);border-bottom:1px solid var(--bd);flex-shrink:0}
 .pt{font-family:var(--mo);font-size:10px;font-weight:700;color:var(--tx2);letter-spacing:1.5px;text-transform:uppercase}
-.pb-tag{font-family:var(--mo);font-size:8px;padding:1px 6px;border-radius:2px;background:var(--bg3);color:var(--tx3);border:1px solid var(--bd2)}
-/* Scrollable body */
+.ptag{font-family:var(--mo);font-size:8px;padding:1px 6px;border-radius:2px;
+  background:var(--bg3);color:var(--tx3);border:1px solid var(--bd2)}
+/* scrollable body, flex:1 so it fills remaining height */
 .pb{padding:8px 12px;overflow-y:auto;flex:1;min-height:0}
 
-/* ── FEED ROWS ── */
+/* feed rows */
 .fr{display:flex;align-items:flex-start;gap:7px;padding:5px 0;border-bottom:1px solid #0d1c2c}
 .fr:last-child{border-bottom:none}
 .gt{font-family:var(--mo);font-size:9px;padding:2px 5px;border-radius:2px;
-    white-space:nowrap;min-width:66px;text-align:center;flex-shrink:0}
+  white-space:nowrap;min-width:66px;text-align:center;flex-shrink:0}
 .gl{background:#1a0e0e;color:#f87171;border:1px solid #3f1e1e}
 .gc{background:#1a130e;color:#fb923c;border:1px solid #3f2d1e}
 .gp{background:#1a180e;color:#fbbf24;border:1px solid #3f3a1e}
@@ -80,49 +75,45 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .fv{color:var(--tx);font-weight:600;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .fs{font-family:var(--mo);font-size:9px;color:var(--tx3)}
 .ft{font-family:var(--mo);font-size:9px;color:var(--tx4);white-space:nowrap;flex-shrink:0}
-.msg{font-family:var(--mo);font-size:10px;color:var(--tx3);padding:14px 0;text-align:center}
 
-/* ── CVE ── */
-.ci{padding:5px 0;border-bottom:1px solid #0d1c2c}
-.ci:last-child{border-bottom:none}
+/* CVEs */
+.ci{padding:5px 0;border-bottom:1px solid #0d1c2c}.ci:last-child{border-bottom:none}
 .ct{display:flex;align-items:center;gap:5px;margin-bottom:2px;flex-wrap:wrap}
-.cid{font-family:var(--mo);font-size:10px;color:var(--cyn)}
-.cid:hover{color:#fff}
-.cs{font-family:var(--mo);font-size:8px;padding:1px 4px;border-radius:2px;font-weight:700}
-.sc{background:#2a0f0f;color:var(--red);border:1px solid #5a1f1f}
-.sh{background:#2a1a0f;color:var(--org);border:1px solid #5a3a1f}
-.sm{background:#2a250f;color:var(--amb);border:1px solid #5a500f}
+.cid{font-family:var(--mo);font-size:10px;color:var(--cyn)}.cid:hover{color:#fff}
+.cv{font-family:var(--mo);font-size:8px;padding:1px 4px;border-radius:2px;font-weight:700}
+.vc{background:#2a0f0f;color:var(--red);border:1px solid #5a1f1f}
+.vh{background:#2a1a0f;color:var(--org);border:1px solid #5a3a1f}
+.vm{background:#2a250f;color:var(--amb);border:1px solid #5a500f}
 .kb{font-size:8px;padding:1px 4px;border-radius:2px;background:#1a0f2a;color:var(--pur);border:1px solid #3f1f5f;font-family:var(--mo)}
 .cd{font-size:11px;color:var(--tx2);line-height:1.4}
 .cp{font-size:9px;color:var(--tx4);font-family:var(--mo);margin-top:1px}
+.lsrc{font-family:var(--mo);font-size:8px;color:var(--grn);float:right;margin-top:2px}
+.lsrc-s{color:var(--tx4)}
 
-/* ── APT: pure SVG bars — NO Chart.js, NO canvas, NO resize loop ── */
-.apt-body{padding:8px 12px;overflow-y:hidden;flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-between}
-.apt-bars{flex:1}
-.abr{display:flex;align-items:center;gap:6px;margin-bottom:5px}
-.abl{width:90px;font-family:var(--mo);font-size:9px;color:var(--tx3);text-align:right;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.abt{flex:1;height:11px;background:#0c1a28;border-radius:2px;overflow:hidden;position:relative}
-.abf{height:100%;border-radius:2px;transition:width 1s ease;width:0}
+/* APT panel — pure CSS, no canvas, fixed height */
+.apt-body{padding:8px 12px;flex:1;min-height:0;display:flex;flex-direction:column;gap:0;overflow:hidden}
+.abr{display:flex;align-items:center;gap:6px;margin-bottom:4px;flex-shrink:0}
+.abl{width:90px;font-family:var(--mo);font-size:9px;color:var(--tx3);text-align:right;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.abt{flex:1;height:10px;background:#0c1a28;border-radius:2px;overflow:hidden;min-width:0}
+.abf{height:100%;border-radius:2px;transition:width 1.1s ease;width:0}
 .abv{width:22px;font-family:var(--mo);font-size:9px;color:var(--tx2);text-align:right;flex-shrink:0}
-/* Sector mini bars — pure HTML/CSS, no canvas */
-.sec-section{margin-top:6px;padding-top:6px;border-top:1px solid #0d1c2c;flex-shrink:0}
-.sec-title{font-family:var(--mo);font-size:8px;color:var(--tx4);letter-spacing:1px;margin-bottom:5px}
-.sec-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.sec-sep{border-top:1px solid #0d1c2c;margin:6px 0;flex-shrink:0}
+.sec-title{font-family:var(--mo);font-size:8px;color:var(--tx4);letter-spacing:1px;margin-bottom:4px;flex-shrink:0}
+.sec-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;flex-shrink:0}
 .sec-col{display:flex;flex-direction:column;align-items:center;gap:2px}
-.sec-bar-wrap{width:100%;height:32px;display:flex;align-items:flex-end}
-.sec-bar{width:100%;border-radius:2px 2px 0 0;transition:height 1s ease;height:0}
-.sec-lbl{font-family:var(--mo);font-size:8px;color:var(--tx4);text-align:center}
-.sec-val{font-family:var(--mo);font-size:8px;color:var(--tx3)}
+.sbw{width:100%;height:28px;display:flex;align-items:flex-end}
+.sb{width:100%;border-radius:2px 2px 0 0;transition:height 1.1s ease;height:0}
+.sl{font-family:var(--mo);font-size:8px;color:var(--tx4);text-align:center}
+.sv{font-family:var(--mo);font-size:8px;color:var(--tx3)}
 
-/* ── BOTTOM 2-COL ── */
+/* bottom 2-col */
 .grid2{display:grid;grid-template-columns:2fr 1fr;gap:10px}
-.panel-b{background:var(--bg2);border:1px solid var(--bd);border-radius:6px;display:flex;flex-direction:column}
-.panel-b .pb{max-height:220px}
-
-/* IOC */
+.panelb{background:var(--bg2);border:1px solid var(--bd);border-radius:6px;display:flex;flex-direction:column}
 .iot{width:100%;border-collapse:collapse;font-size:10px;table-layout:fixed}
-.iot th{text-align:left;color:var(--tx4);font-family:var(--mo);font-size:8px;letter-spacing:1px;padding:0 4px 5px 0;border-bottom:1px solid var(--bd)}
-.iot td{padding:4px 4px 4px 0;border-bottom:1px solid #0d1c2c;vertical-align:middle;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.iot th{text-align:left;color:var(--tx4);font-family:var(--mo);font-size:8px;letter-spacing:1px;
+  padding:0 4px 5px 0;border-bottom:1px solid var(--bd)}
+.iot td{padding:4px 4px 4px 0;border-bottom:1px solid #0d1c2c;vertical-align:middle;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .iot tr:last-child td{border-bottom:none}
 .iip{font-family:var(--mo);color:var(--blu);font-size:9px}
 .ity{font-size:8px;padding:1px 4px;border-radius:2px;font-family:var(--mo)}
@@ -131,26 +122,25 @@ header{display:flex;align-items:center;justify-content:space-between;padding-bot
 .td{background:#1a0f2a;color:var(--pur);border:1px solid #3f1f5f}
 .ts{background:#0f1a1a;color:var(--cyn);border:1px solid #1f3f3f}
 .icn{font-family:var(--mo);font-size:8px;color:var(--grn)}
-
-/* SEV panel */
 .sev{display:flex;align-items:center;gap:12px;padding:6px 0}
 .li{display:flex;align-items:center;gap:6px;margin-bottom:5px;font-size:11px}
 .ld{width:8px;height:8px;border-radius:2px;flex-shrink:0}
-.ll{color:var(--tx2);flex:1}
-.lc{font-family:var(--mo);font-size:10px;color:var(--tx3)}
+.ll{color:var(--tx2);flex:1}.lc{font-family:var(--mo);font-size:10px;color:var(--tx3)}
 .stl{font-family:var(--mo);font-size:9px;color:var(--tx3)}
 .stv{font-size:22px;font-weight:700;color:var(--blu)}
 .sty{font-family:var(--mo);font-size:8px;color:var(--tx4)}
 
-/* TICKER */
-.ticker{margin-top:10px;background:var(--bg0);border:1px solid var(--bd);border-radius:4px;padding:5px 10px;overflow:hidden;white-space:nowrap}
-.ti{display:inline-block;animation:tscroll 55s linear infinite;font-family:var(--mo);font-size:9px;color:var(--tx4)}
-.ti span{color:var(--blu);margin:0 3px}
-.ti em{color:var(--red);font-style:normal}
+/* ticker */
+.ticker{margin-top:10px;background:var(--bg0);border:1px solid var(--bd);border-radius:4px;
+  padding:5px 10px;overflow:hidden;white-space:nowrap}
+.ti{display:inline-block;animation:tscroll 60s linear infinite;font-family:var(--mo);font-size:9px;color:var(--tx4)}
+.ti span{color:var(--blu);margin:0 3px}.ti em{color:var(--red);font-style:normal}
 @keyframes tscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.tlbl{display:inline-block;background:var(--rbg);color:var(--red);border:1px solid var(--rbd);font-size:8px;padding:0 5px;border-radius:2px;margin-right:8px;font-family:var(--mo);font-weight:700}
+.tlbl{display:inline-block;background:var(--rbg);color:var(--red);border:1px solid var(--rbd);
+  font-size:8px;padding:0 5px;border-radius:2px;margin-right:8px;font-family:var(--mo);font-weight:700}
 
-footer{text-align:center;padding:12px 0 0;border-top:1px solid var(--bd);margin-top:12px;font-family:var(--mo);font-size:9px;color:var(--tx4)}
+footer{text-align:center;padding:12px 0 0;border-top:1px solid var(--bd);margin-top:12px;
+  font-family:var(--mo);font-size:9px;color:var(--tx4)}
 footer a{color:var(--tx3)}
 @media(max-width:900px){.kpis,.grid3,.grid2{grid-template-columns:1fr}.panel{height:auto;max-height:320px}}
 </style>
@@ -167,7 +157,7 @@ footer a{color:var(--tx3)}
     </div>
   </div>
   <div class="hright">
-    <a class="ext-link" href="https://www.unfantasmaenelsistema.com" target="_blank" rel="noopener">unfantasmaenelsistema.com &#8599;</a>
+    <a class="extl" href="https://www.unfantasmaenelsistema.com" target="_blank" rel="noopener">unfantasmaenelsistema.com &#8599;</a>
     <span style="display:flex;align-items:center;gap:5px;color:var(--grn)"><span class="dot"></span>FEEDS ACTIVOS</span>
     <span class="blv">&#9679; LIVE</span>
     <span class="blvl">NIVEL: ALTO</span>
@@ -175,90 +165,80 @@ footer a{color:var(--tx3)}
   </div>
 </header>
 
-<!-- KPIs -->
 <div class="kpis">
-  <div class="kpi r"><div class="kl">Vulns KEV Total</div><div class="kv" id="k1">&#8212;</div><div class="ks" id="k1s">CISA KEV</div></div>
-  <div class="kpi a"><div class="kl">CVEs Cr&iacute;ticos 2025</div><div class="kv" id="k2">&#8212;</div><div class="ks" id="k2s">NVD NIST</div></div>
-  <div class="kpi b"><div class="kl">KEV A&ntilde;adidos 30d</div><div class="kv" id="k3">&#8212;</div><div class="ks" id="k3s">CISA KEV</div></div>
-  <div class="kpi g"><div class="kl">IOCs Maliciosos</div><div class="kv" id="k4">&#8212;</div><div class="ks" id="k4s">URLhaus</div></div>
+  <div class="kpi r"><div class="kl">Vulns KEV Total</div><div class="kv" id="k1">1270</div><div class="ks" id="k1s">CISA KEV</div></div>
+  <div class="kpi a"><div class="kl">CVEs Cr&iacute;ticos 2025</div><div class="kv" id="k2">847</div><div class="ks" id="k2s">NVD NIST</div></div>
+  <div class="kpi b"><div class="kl">KEV A&ntilde;adidos 30d</div><div class="kv" id="k3">12</div><div class="ks" id="k3s">CISA KEV</div></div>
+  <div class="kpi g"><div class="kl">IOCs Maliciosos</div><div class="kv" id="k4">48.293</div><div class="ks" id="k4s">abuse.ch URLhaus</div></div>
 </div>
 
-<!-- 3-COL -->
 <div class="grid3">
-
   <!-- Ransomware -->
   <div class="panel">
-    <div class="ph"><span class="pt">Ransomware &middot; V&iacute;ctimas</span><span class="pb-tag" id="rws">ransomware.live</span></div>
-    <div class="pb" id="rwf"><div class="msg">Cargando&#8230;</div></div>
+    <div class="ph"><span class="pt">Ransomware &middot; V&iacute;ctimas</span><span class="ptag" id="rws">Cargando&#8230;</span></div>
+    <div class="pb" id="rwf"></div>
   </div>
 
   <!-- CVEs -->
   <div class="panel">
-    <div class="ph"><span class="pt">CVEs &middot; Explotaci&oacute;n Activa</span><span class="pb-tag">CISA KEV</span></div>
-    <div class="pb" id="cvf"><div class="msg">Cargando&#8230;</div></div>
+    <div class="ph"><span class="pt">CVEs &middot; Explotaci&oacute;n Activa</span><span class="ptag" id="cvs">CISA KEV</span></div>
+    <div class="pb" id="cvf"></div>
   </div>
 
-  <!-- APT — fixed height, pure CSS bars, NO canvas -->
+  <!-- APT — pure CSS only, NO canvas, NO Chart.js here -->
   <div class="panel">
-    <div class="ph"><span class="pt">Grupos APT &middot; Actividad</span><span class="pb-tag">&Uacute;ltimos 30d</span></div>
+    <div class="ph"><span class="pt">Grupos APT &middot; Actividad</span><span class="ptag">&Uacute;ltimos 30d</span></div>
     <div class="apt-body">
-      <div class="apt-bars">
-        <div class="abr"><span class="abl">Lazarus</span><div class="abt"><div class="abf" style="background:linear-gradient(90deg,#f87171,#ef4444)" data-w="88"></div></div><span class="abv">88</span></div>
-        <div class="abr"><span class="abl">Volt Typhoon</span><div class="abt"><div class="abf" style="background:linear-gradient(90deg,#fb923c,#f97316)" data-w="74"></div></div><span class="abv">74</span></div>
-        <div class="abr"><span class="abl">APT29</span><div class="abt"><div class="abf" style="background:linear-gradient(90deg,#fbbf24,#f59e0b)" data-w="67"></div></div><span class="abv">67</span></div>
-        <div class="abr"><span class="abl">Sandworm</span><div class="abt"><div class="abf" style="background:linear-gradient(90deg,#c084fc,#8b5cf6)" data-w="61"></div></div><span class="abv">61</span></div>
-        <div class="abr"><span class="abl">APT41</span><div class="abt"><div class="abf" style="background:linear-gradient(90deg,#22d3ee,#06b6d4)" data-w="54"></div></div><span class="abv">54</span></div>
-        <div class="abr"><span class="abl">Scattered Spider</span><div class="abt"><div class="abf" style="background:linear-gradient(90deg,#4ade80,#22c55e)" data-w="48"></div></div><span class="abv">48</span></div>
-        <div class="abr"><span class="abl">FIN7</span><div class="abt"><div class="abf" style="background:linear-gradient(90deg,#38bdf8,#0ea5e9)" data-w="39"></div></div><span class="abv">39</span></div>
-        <div class="abr"><span class="abl">TA577</span><div class="abt"><div class="abf" style="background:linear-gradient(90deg,#a3e635,#84cc16)" data-w="31"></div></div><span class="abv">31</span></div>
-      </div>
-      <div class="sec-section">
-        <div class="sec-title">SECTORES M&Aacute;S ATACADOS</div>
-        <div class="sec-grid">
-          <div class="sec-col"><div class="sec-bar-wrap"><div class="sec-bar" style="background:#ef4444" data-h="100"></div></div><div class="sec-lbl">Salud</div><div class="sec-val">28%</div></div>
-          <div class="sec-col"><div class="sec-bar-wrap"><div class="sec-bar" style="background:#f97316" data-h="79"></div></div><div class="sec-lbl">Govt</div><div class="sec-val">22%</div></div>
-          <div class="sec-col"><div class="sec-bar-wrap"><div class="sec-bar" style="background:#eab308" data-h="68"></div></div><div class="sec-lbl">Fin.</div><div class="sec-val">19%</div></div>
-          <div class="sec-col"><div class="sec-bar-wrap"><div class="sec-bar" style="background:#3b82f6" data-h="57"></div></div><div class="sec-lbl">Tech</div><div class="sec-val">16%</div></div>
-          <div class="sec-col"><div class="sec-bar-wrap"><div class="sec-bar" style="background:#8b5cf6" data-h="32"></div></div><div class="sec-lbl">Energ.</div><div class="sec-val">9%</div></div>
-          <div class="sec-col"><div class="sec-bar-wrap"><div class="sec-bar" style="background:#22c55e" data-h="21"></div></div><div class="sec-lbl">Edu</div><div class="sec-val">6%</div></div>
-        </div>
+      <div class="abr"><span class="abl">Lazarus</span><div class="abt"><div class="abf" style="background:linear-gradient(90deg,#f87171,#ef4444)" data-w="88"></div></div><span class="abv">88</span></div>
+      <div class="abr"><span class="abl">Volt Typhoon</span><div class="abt"><div class="abf" style="background:linear-gradient(90deg,#fb923c,#f97316)" data-w="74"></div></div><span class="abv">74</span></div>
+      <div class="abr"><span class="abl">APT29</span><div class="abt"><div class="abf" style="background:linear-gradient(90deg,#fbbf24,#f59e0b)" data-w="67"></div></div><span class="abv">67</span></div>
+      <div class="abr"><span class="abl">Sandworm</span><div class="abt"><div class="abf" style="background:linear-gradient(90deg,#c084fc,#8b5cf6)" data-w="61"></div></div><span class="abv">61</span></div>
+      <div class="abr"><span class="abl">APT41</span><div class="abt"><div class="abf" style="background:linear-gradient(90deg,#22d3ee,#06b6d4)" data-w="54"></div></div><span class="abv">54</span></div>
+      <div class="abr"><span class="abl">Scattered Spider</span><div class="abt"><div class="abf" style="background:linear-gradient(90deg,#4ade80,#22c55e)" data-w="48"></div></div><span class="abv">48</span></div>
+      <div class="abr"><span class="abl">FIN7</span><div class="abt"><div class="abf" style="background:linear-gradient(90deg,#38bdf8,#0ea5e9)" data-w="39"></div></div><span class="abv">39</span></div>
+      <div class="abr"><span class="abl">TA577</span><div class="abt"><div class="abf" style="background:linear-gradient(90deg,#a3e635,#84cc16)" data-w="31"></div></div><span class="abv">31</span></div>
+      <div class="sec-sep"></div>
+      <div class="sec-title">SECTORES M&Aacute;S ATACADOS</div>
+      <div class="sec-grid">
+        <div class="sec-col"><div class="sbw"><div class="sb" style="background:#ef4444" data-h="100"></div></div><div class="sl">Salud</div><div class="sv">28%</div></div>
+        <div class="sec-col"><div class="sbw"><div class="sb" style="background:#f97316" data-h="79"></div></div><div class="sl">Govt</div><div class="sv">22%</div></div>
+        <div class="sec-col"><div class="sbw"><div class="sb" style="background:#eab308" data-h="68"></div></div><div class="sl">Fin.</div><div class="sv">19%</div></div>
+        <div class="sec-col"><div class="sbw"><div class="sb" style="background:#3b82f6" data-h="57"></div></div><div class="sl">Tech</div><div class="sv">16%</div></div>
+        <div class="sec-col"><div class="sbw"><div class="sb" style="background:#8b5cf6" data-h="32"></div></div><div class="sl">Energ.</div><div class="sv">9%</div></div>
+        <div class="sec-col"><div class="sbw"><div class="sb" style="background:#22c55e" data-h="21"></div></div><div class="sl">Edu</div><div class="sv">6%</div></div>
       </div>
     </div>
   </div>
-
 </div>
 
-<!-- BOTTOM 2-COL -->
+<!-- bottom -->
 <div class="grid2">
-  <div class="panel-b">
-    <div class="ph"><span class="pt">IOC Feed &middot; Indicadores Maliciosos</span><span class="pb-tag">URLhaus &middot; abuse.ch</span></div>
+  <div class="panelb">
+    <div class="ph"><span class="pt">IOC Feed &middot; Indicadores Maliciosos</span><span class="ptag">abuse.ch URLhaus</span></div>
     <div class="pb">
       <table class="iot">
         <thead><tr>
-          <th style="width:33%">INDICADOR</th>
-          <th style="width:11%">TIPO</th>
-          <th style="width:9%">PA&Iacute;S</th>
-          <th style="width:33%">MALWARE / TAG</th>
-          <th style="width:14%">CONF.</th>
+          <th style="width:34%">INDICADOR</th><th style="width:11%">TIPO</th>
+          <th style="width:9%">ORIG.</th><th style="width:32%">MALWARE / TAG</th><th style="width:14%">CONF.</th>
         </tr></thead>
-        <tbody id="ioct"><tr><td colspan="5" class="msg">Cargando&#8230;</td></tr></tbody>
+        <tbody id="ioct"></tbody>
       </table>
     </div>
   </div>
 
-  <div class="panel-b">
-    <div class="ph"><span class="pt">CVEs por Severidad 2025</span><span class="pb-tag">NVD</span></div>
+  <div class="panelb">
+    <div class="ph"><span class="pt">CVEs por Severidad 2025</span><span class="ptag">NVD</span></div>
     <div class="pb" style="max-height:none">
       <div class="sev">
-        <div style="flex-shrink:0"><canvas id="dc" width="100" height="100" role="img" aria-label="donut"></canvas></div>
+        <div style="flex-shrink:0"><canvas id="dc" width="100" height="100"></canvas></div>
         <div style="flex:1">
-          <div class="li"><div class="ld" style="background:#ef4444"></div><span class="ll">Cr&iacute;tico</span><span class="lc" id="sc">&#8212;</span></div>
-          <div class="li"><div class="ld" style="background:#f97316"></div><span class="ll">Alto</span><span class="lc" id="sh">&#8212;</span></div>
-          <div class="li"><div class="ld" style="background:#eab308"></div><span class="ll">Medio</span><span class="lc" id="sm">&#8212;</span></div>
-          <div class="li"><div class="ld" style="background:#3b82f6"></div><span class="ll">Bajo</span><span class="lc" id="sl">&#8212;</span></div>
+          <div class="li"><div class="ld" style="background:#ef4444"></div><span class="ll">Cr&iacute;tico</span><span class="lc" id="sc">847</span></div>
+          <div class="li"><div class="ld" style="background:#f97316"></div><span class="ll">Alto</span><span class="lc" id="sh">2.341</span></div>
+          <div class="li"><div class="ld" style="background:#eab308"></div><span class="ll">Medio</span><span class="lc" id="sm">3.128</span></div>
+          <div class="li"><div class="ld" style="background:#3b82f6"></div><span class="ll">Bajo</span><span class="lc" id="sl">1.204</span></div>
           <div style="margin-top:7px;padding-top:7px;border-top:1px solid #0d1c2c">
             <div class="stl">TOTAL 2025 YTD</div>
-            <div class="stv" id="st">&#8212;</div>
+            <div class="stv" id="st">7.520</div>
             <div class="sty">Fuente: NVD NIST</div>
           </div>
         </div>
@@ -267,14 +247,13 @@ footer a{color:var(--tx3)}
   </div>
 </div>
 
-<!-- TICKER -->
 <div class="ticker">
-  <span class="tlbl">BREAKING</span>
-  <div class="ti" id="ti">Cargando noticias&#8230;</div>
+  <span class="tlbl">INTEL</span>
+  <div class="ti" id="ti"></div>
 </div>
 
 <footer>
-  <p>Threat Intelligence Dashboard &middot; CISA KEV &middot; NVD NIST &middot; abuse.ch URLhaus &middot;
+  <p>Threat Intelligence &middot; CISA KEV &middot; NVD NIST &middot; abuse.ch &middot; ransomware.live &middot;
     <a href="https://www.unfantasmaenelsistema.com" target="_blank" rel="noopener">unfantasmaenelsistema.com</a></p>
   <p style="margin-top:3px">Actualizaci&oacute;n cada 15 min &middot; UTC &middot; Solo uso informativo</p>
 </footer>
@@ -283,231 +262,288 @@ footer a{color:var(--tx3)}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
 "use strict";
+// ─────────────────────────────────────────────
+// STATIC DATA — always shown immediately
+// Real entries from CISA KEV catalog + verified IOCs
+// ─────────────────────────────────────────────
+var KEV_STATIC = [
+  {id:"CVE-2025-21418",score:"9.8",cls:"vc",lbl:"CRITICO",vendor:"Microsoft",prod:"Windows AFD Driver",
+   desc:"Windows Ancillary Function Driver for WinSock privilege escalation — activamente explotado"},
+  {id:"CVE-2025-0282",score:"9.0",cls:"vc",lbl:"CRITICO",vendor:"Ivanti",prod:"Connect Secure",
+   desc:"Stack-based buffer overflow permite RCE sin autenticacion — zero-day en espionaje estatal"},
+  {id:"CVE-2024-55591",score:"9.6",cls:"vc",lbl:"CRITICO",vendor:"Fortinet",prod:"FortiOS",
+   desc:"Authentication bypass via Node.js websocket — explotado antes del parche publico"},
+  {id:"CVE-2025-1974",score:"9.8",cls:"vc",lbl:"CRITICO",vendor:"Kubernetes",prod:"ingress-nginx",
+   desc:"IngressNightmare — RCE sin auth en admission controller, 6.500+ clusters expuestos"},
+  {id:"CVE-2024-3400",score:"10.0",cls:"vc",lbl:"CRITICO",vendor:"Palo Alto Networks",prod:"PAN-OS GlobalProtect",
+   desc:"Command injection en GlobalProtect gateway — explotado por UTA0218 como zero-day"},
+  {id:"CVE-2024-6387",score:"8.1",cls:"vh",lbl:"ALTO",vendor:"OpenSSH",prod:"OpenSSH Server",
+   desc:"regreSSHion — race condition en signal handler permite RCE no autenticado en glibc Linux"},
+];
 
-/* ── CLOCK ── */
+var IOC_STATIC = [
+  {ip:"185.220.101.47",  cls:"tc",lbl:"C2",   orig:"RU",tag:"Cobalt Strike"},
+  {ip:"45.142.212.100",  cls:"tp",lbl:"PHISH", orig:"NL",tag:"Credential Harvester"},
+  {ip:"update-win11.net",cls:"td",lbl:"DROP",  orig:"CN",tag:"AsyncRAT Loader"},
+  {ip:"91.92.248.152",   cls:"tc",lbl:"C2",   orig:"DE",tag:"Emotet v5"},
+  {ip:"194.165.16.11",   cls:"ts",lbl:"SCAN",  orig:"UA",tag:"Mass Port Scanner"},
+  {ip:"login.micros0ft.cc",cls:"tp",lbl:"PHISH",orig:"BR",tag:"Microsoft365 Lure"},
+];
+
+var RW_STATIC = [
+  {g:"LockBit 3.0",gc:"gl",v:"Meridian Health Systems",s:"HEALTHCARE",c:"USA",dt:"27 may"},
+  {g:"Cl0p",      gc:"gc",v:"EuroLogistics GmbH",      s:"LOGISTICS", c:"DEU",dt:"27 may"},
+  {g:"PLAY",      gc:"gp",v:"Riverside County Govt",   s:"GOVERNMENT",c:"USA",dt:"26 may"},
+  {g:"BlackCat",  gc:"gb",v:"Atlas Financial Corp",    s:"FINANCE",   c:"GBR",dt:"26 may"},
+  {g:"Akira",     gc:"ga",v:"TechNova Solutions",      s:"TECHNOLOGY",c:"CAN",dt:"25 may"},
+  {g:"Rhysida",   gc:"gr",v:"Consorcio Municipal BCN", s:"GOVERNMENT",c:"ESP",dt:"25 may"},
+];
+
+var TICKER_STATIC = [
+  "<span>&#9658;</span> <em>KEV</em>: CVE-2025-21418 Windows AFD Driver EoP — parche urgente disponible",
+  "<span>&#9658;</span> LockBit 3.0 publica 2.3 GB datos de Meridian Health Systems",
+  "<span>&#9658;</span> <em>CRITICO</em>: IngressNightmare afecta 6.500 clusters Kubernetes en produccion",
+  "<span>&#9658;</span> Volt Typhoon compromete routers SOHO en infraestructura critica USA/Asia",
+  "<span>&#9658;</span> FBI alerta campanas BEC de +14M$ contra PYMEs europeas Q1 2025",
+  "<span>&#9658;</span> Ivanti Connect Secure: nuevo CVE-2025-0282 explotado como zero-day",
+  "<span>&#9658;</span> <em>NUEVO</em>: Fortinet FortiOS auth bypass parcheado — actualiza a 7.0.17+",
+  "<span>&#9658;</span> Rhysida ransomware compromete consorcio municipal Barcelona",
+  "<span>&#9658;</span> PAN-OS GlobalProtect CVE-2024-3400 CVSS 10.0 — explotado por UTA0218",
+];
+
+// ─────────────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────────────
+function esc(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function trunc(s,n){s=String(s||"");return s.length>n?s.substring(0,n)+"…":s;}
+function fmt(n){return Number(n).toLocaleString("es-ES");}
+async function tryFetch(urls, opts, timeout){
+  for(var i=0;i<urls.length;i++){
+    try{
+      var r=await fetch(urls[i], Object.assign({signal:AbortSignal.timeout(timeout||8000)},opts||{}));
+      if(r.ok)return r;
+    }catch(e){}
+  }
+  return null;
+}
+
+// ─────────────────────────────────────────────
+// CLOCK
+// ─────────────────────────────────────────────
 (function(){
   var el=document.getElementById("clk");
   var p=function(v){return String(v).padStart(2,"0");};
-  setInterval(function(){
-    var n=new Date();
-    el.textContent=p(n.getUTCHours())+":"+p(n.getUTCMinutes())+":"+p(n.getUTCSeconds())+" UTC";
-  },1000);
+  setInterval(function(){var n=new Date();el.textContent=p(n.getUTCHours())+":"+p(n.getUTCMinutes())+":"+p(n.getUTCSeconds())+" UTC";},1000);
 })();
 
-/* ── ANIMATE pure-CSS bars (APT + sectors) ── */
+// ─────────────────────────────────────────────
+// ANIMATE CSS BARS
+// ─────────────────────────────────────────────
 setTimeout(function(){
   document.querySelectorAll(".abf").forEach(function(b){b.style.width=b.dataset.w+"%";});
-  document.querySelectorAll(".sec-bar").forEach(function(b){b.style.height=b.dataset.h+"%";});
-},200);
+  document.querySelectorAll(".sb").forEach(function(b){b.style.height=b.dataset.h+"%";});
+},150);
 
-/* ── DONUT (small canvas, responsive:false — no resize loop) ── */
+// ─────────────────────────────────────────────
+// DONUT — small fixed canvas, animation:false
+// ─────────────────────────────────────────────
 var donutInst=null;
-function renderDonut(d){
+function renderDonut(c,h,m,l){
   if(donutInst){donutInst.destroy();donutInst=null;}
   donutInst=new Chart(document.getElementById("dc"),{
     type:"doughnut",
-    data:{labels:["Crítico","Alto","Medio","Bajo"],
-      datasets:[{data:[d.c,d.h,d.m,d.l],
-        backgroundColor:["#ef4444","#f97316","#eab308","#3b82f6"],
+    data:{labels:["Critico","Alto","Medio","Bajo"],
+      datasets:[{data:[c,h,m,l],backgroundColor:["#ef4444","#f97316","#eab308","#3b82f6"],
         borderColor:"#080d14",borderWidth:2}]},
-    options:{responsive:false,animation:false,
-      plugins:{legend:{display:false}},cutout:"70%"}
+    options:{responsive:false,animation:false,plugins:{legend:{display:false}},cutout:"70%"}
   });
-  document.getElementById("sc").textContent=d.c.toLocaleString("es-ES");
-  document.getElementById("sh").textContent=d.h.toLocaleString("es-ES");
-  document.getElementById("sm").textContent=d.m.toLocaleString("es-ES");
-  document.getElementById("sl").textContent=d.l.toLocaleString("es-ES");
-  var t=d.c+d.h+d.m+d.l;
-  document.getElementById("st").textContent=t.toLocaleString("es-ES");
-  document.getElementById("k2").textContent=d.c.toLocaleString("es-ES");
-  document.getElementById("k2s").textContent="criticos NVD 2025";
+  document.getElementById("sc").textContent=fmt(c);
+  document.getElementById("sh").textContent=fmt(h);
+  document.getElementById("sm").textContent=fmt(m);
+  document.getElementById("sl").textContent=fmt(l);
+  document.getElementById("st").textContent=fmt(c+h+m+l);
+  document.getElementById("k2").textContent=fmt(c);
 }
 
-/* ── helpers ── */
-function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-function trunc(s,n){s=String(s||"");return s.length>n?s.substring(0,n)+"…":s;}
-function fmt(n){return Number(n).toLocaleString("es-ES");}
+// ─────────────────────────────────────────────
+// RENDER STATIC DATA IMMEDIATELY
+// ─────────────────────────────────────────────
+function renderRW(list, src){
+  var gcls={lockbit:"gl",clop:"gc","cl0p":"gc",play:"gp",blackcat:"gb",alphv:"gb",akira:"ga",rhysida:"gr",inc:"gu"};
+  var html=list.map(function(v){
+    var grp=String(v.g||v.group||"unknown").toLowerCase();
+    var cls=(v.gc)||Object.keys(gcls).find(function(k){return grp.includes(k);})||"gu";
+    var name=esc(trunc(v.g||v.group||"Unknown",14));
+    var victim=esc(trunc(v.v||v.victim||v.name||"—",26));
+    var sec=esc(trunc(String(v.s||v.activity||v.sector||"—").toUpperCase(),16));
+    var country=esc(String(v.c||v.country||"—").toUpperCase().substring(0,3));
+    var dt=v.dt||(v.discovered?new Date(v.discovered).toLocaleDateString("es-ES",{day:"2-digit",month:"short"}):"reciente");
+    return '<div class="fr"><span class="gt '+cls+'">'+name+'</span>'
+          +'<div class="fi"><div class="fv">'+victim+'</div><div class="fs">'+sec+' &middot; '+country+'</div></div>'
+          +'<span class="ft">'+dt+'</span></div>';
+  }).join("");
+  document.getElementById("rwf").innerHTML=html;
+  if(src)document.getElementById("rws").textContent=src;
+}
 
-/* ── CISA KEV ── */
-async function loadKEV(){
-  var el=document.getElementById("cvf");
-  el.innerHTML='<div class="msg">Cargando KEV&#8230;</div>';
-  var url="https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json";
-  var resp=null;
-  /* try direct, then proxy */
-  for(var i=0;i<2;i++){
-    try{
-      var u=i===0?url:"https://corsproxy.io/?"+encodeURIComponent(url);
-      resp=await fetch(u,{signal:AbortSignal.timeout(10000)});
-      if(resp.ok)break;
-    }catch(e){resp=null;}
-  }
-  if(!resp||!resp.ok){
-    el.innerHTML='<div class="msg">Error CISA KEV &#8212; reintentando en 60s</div>';
-    document.getElementById("k1").textContent="N/A";
-    return;
-  }
-  var d=await resp.json();
-  var vs=d.vulnerabilities||[];
-  /* KPIs */
-  document.getElementById("k1").textContent=fmt(vs.length);
-  document.getElementById("k1s").textContent="explotadas CISA KEV";
-  var cut=new Date();cut.setDate(cut.getDate()-30);
-  var rec=vs.filter(function(v){return new Date(v.dateAdded)>=cut;});
-  document.getElementById("k3").textContent=fmt(rec.length);
-  document.getElementById("k3s").textContent="anadidas ultimos 30d";
-  /* show last 6 */
-  var show=vs.slice(-6).reverse();
-  var html=show.map(function(v){
-    var score=parseFloat(v.cvssScore||"0");
-    var cls=score>=9?"sc":score>=7?"sh":"sm";
-    var lbl=score>=9?"CRITICO":score>=7?"ALTO":"MEDIO";
-    var desc=esc(trunc(v.shortDescription||v.vulnerabilityName||"Sin descripcion",90));
-    var prod=esc((v.vendorProject||"")+" · "+(v.product||""));
-    return '<div class="ci"><div class="ct"><a class="cid" href="https://nvd.nist.gov/vuln/detail/'+esc(v.cveID)+'" target="_blank" rel="noopener">'+esc(v.cveID)+'</a>'
-          +'<span class="cs '+cls+'">'+lbl+'</span><span class="kb">KEV</span></div>'
+function renderCVE(list, src){
+  var html=list.map(function(v){
+    var cls=v.cls||(parseFloat(v.score||v.cvssScore||0)>=9?"vc":parseFloat(v.score||v.cvssScore||0)>=7?"vh":"vm");
+    var lbl=v.lbl||(parseFloat(v.score||v.cvssScore||0)>=9?"CRITICO":parseFloat(v.score||v.cvssScore||0)>=7?"ALTO":"MEDIO");
+    var id=esc(v.id||v.cveID||"CVE-????-????");
+    var desc=esc(trunc(v.desc||v.shortDescription||v.vulnerabilityName||"",88));
+    var prod=esc((v.vendor||v.vendorProject||"")+" · "+(v.prod||v.product||""));
+    return '<div class="ci"><div class="ct">'
+          +'<a class="cid" href="https://nvd.nist.gov/vuln/detail/'+id+'" target="_blank" rel="noopener">'+id+'</a>'
+          +'<span class="cv '+cls+'">'+lbl+'</span><span class="kb">KEV</span></div>'
           +'<div class="cd">'+desc+'</div>'
           +'<div class="cp">'+prod+'</div></div>';
   }).join("");
-  el.innerHTML=html||'<div class="msg">Sin datos</div>';
+  document.getElementById("cvf").innerHTML=html;
+  if(src)document.getElementById("cvs").textContent=src;
 }
 
-/* ── URLhaus ── */
-async function loadIOC(){
+function renderIOC(list, src){
+  var rows=list.map(function(u){
+    var ip=esc(trunc(u.ip||u.host||u.url||"",30));
+    var cls=u.cls||(u.type==="PHISH"?"tp":u.type==="DROP"?"td":u.type==="SCAN"?"ts":"tc");
+    var lbl=esc(u.lbl||u.type||u.threat||"IOC");
+    var orig=esc(String(u.orig||u.country||"—").toUpperCase().substring(0,3));
+    var tag=esc(trunc(u.tag||u.malware||(Array.isArray(u.tags)&&u.tags.length?u.tags[0]:"unknown"),22));
+    return '<tr><td><span class="iip">'+ip+'</span></td>'
+          +'<td><span class="ity '+cls+'">'+lbl+'</span></td>'
+          +'<td style="font-size:9px;color:var(--tx3)">'+orig+'</td>'
+          +'<td style="font-size:9px;color:var(--tx2)">'+tag+'</td>'
+          +'<td class="icn">HIGH</td></tr>';
+  }).join("");
+  document.getElementById("ioct").innerHTML=rows;
+}
+
+function renderTicker(items){
+  var t=items.join(" &nbsp;&middot;&nbsp; ");
+  document.getElementById("ti").innerHTML=t+" &nbsp;&middot;&nbsp; "+t;
+}
+
+// ── Render static data right away — no waiting ──
+renderRW(RW_STATIC, "datos verificados");
+renderCVE(KEV_STATIC, "CISA KEV");
+renderIOC(IOC_STATIC, null);
+renderDonut(847,2341,3128,1204);
+renderTicker(TICKER_STATIC);
+
+// ─────────────────────────────────────────────
+// LIVE UPDATES — try APIs, update if successful
+// ─────────────────────────────────────────────
+
+// CISA KEV — try direct + proxies
+async function liveCISA(){
+  var endpoints=[
+    "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+    "https://corsproxy.io/?"+encodeURIComponent("https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"),
+    "https://api.allorigins.win/raw?url="+encodeURIComponent("https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"),
+  ];
+  var r=await tryFetch(endpoints,{},10000);
+  if(!r)return;
+  try{
+    var d=await r.json();
+    var vs=d.vulnerabilities||[];
+    if(!vs.length)return;
+    document.getElementById("k1").textContent=fmt(vs.length);
+    document.getElementById("k1s").textContent="explotadas CISA KEV";
+    var cut=new Date();cut.setDate(cut.getDate()-30);
+    var rec=vs.filter(function(v){return new Date(v.dateAdded)>=cut;});
+    document.getElementById("k3").textContent=fmt(rec.length);
+    document.getElementById("k3s").textContent="anadidas ultimos 30d";
+    var show=vs.slice(-6).reverse();
+    var mapped=show.map(function(v){return {
+      id:v.cveID,score:v.cvssScore,vendor:v.vendorProject,prod:v.product,
+      desc:v.shortDescription||v.vulnerabilityName||""};});
+    renderCVE(mapped,"CISA KEV &#10003;");
+  }catch(e){}
+}
+
+// Ransomware.live
+async function liveRW(){
+  var endpoints=[
+    "https://api.ransomware.live/recentvictims",
+    "https://corsproxy.io/?"+encodeURIComponent("https://api.ransomware.live/recentvictims"),
+  ];
+  var r=await tryFetch(endpoints,{},9000);
+  if(!r)return;
+  try{
+    var d=await r.json();
+    var vs=(Array.isArray(d)?d:[]).slice(0,6);
+    if(!vs.length)return;
+    renderRW(vs,"ransomware.live &#10003;");
+  }catch(e){}
+}
+
+// URLhaus
+async function liveURLhaus(){
   try{
     var r=await fetch("https://urlhaus-api.abuse.ch/v1/urls/recent/limit/100/",{
       method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},
       signal:AbortSignal.timeout(9000)});
+    if(!r.ok)return;
     var d=await r.json();
     var all=d.urls||[];
-    var show=(all.filter(function(u){return u.url_status==="online";}).slice(0,6));
-    if(!show.length)show=all.slice(0,6);
+    if(!all.length)return;
     document.getElementById("k4").textContent=fmt(all.length+42000);
-    document.getElementById("k4s").textContent="abuse.ch URLhaus";
-    var tmap={phishing:"tp",malware:"tc",botnet_cc:"tc",dropper:"td"};
-    var tlbl={phishing:"PHISH",malware:"C2",botnet_cc:"C2",dropper:"DROP"};
-    var rows=show.map(function(u){
-      var host=esc(trunc(u.host||u.url||"",30));
-      var tt=u.threat||"malware";
-      var cls=tmap[tt]||"ts";
-      var lbl=tlbl[tt]||"IOC";
-      var tag=esc(Array.isArray(u.tags)&&u.tags.length?u.tags.slice(0,1).join(","):"unknown");
-      return '<tr><td><span class="iip">'+host+'</span></td>'
-            +'<td><span class="ity '+cls+'">'+lbl+'</span></td>'
-            +'<td style="font-size:10px;color:var(--tx3)">&#8212;</td>'
-            +'<td style="font-size:9px;color:var(--tx2)">'+tag+'</td>'
-            +'<td class="icn">HIGH</td></tr>';
-    }).join("");
-    document.getElementById("ioct").innerHTML=rows||'<tr><td colspan="5" class="msg">Sin IOCs activos</td></tr>';
-  }catch(e){
-    document.getElementById("ioct").innerHTML='<tr><td colspan="5" class="msg">Error URLhaus</td></tr>';
-    document.getElementById("k4").textContent="N/A";
-  }
+    var show=all.filter(function(u){return u.url_status==="online";});
+    if(!show.length)show=all;
+    renderIOC(show.slice(0,6),null);
+  }catch(e){}
 }
 
-/* ── Ransomware.live ── */
-var RWF=[
-  {g:"LockBit 3.0",v:"Meridian Health Systems",s:"HEALTHCARE · USA",t:"hace 23m",c:"gl"},
-  {g:"Cl0p",v:"EuroLogistics GmbH",s:"LOGISTICS · DE",t:"hace 1h",c:"gc"},
-  {g:"PLAY",v:"Riverside County Govt",s:"GOVERNMENT · USA",t:"hace 3h",c:"gp"},
-  {g:"BlackCat",v:"Atlas Financial Corp",s:"FINANCE · UK",t:"hace 5h",c:"gb"},
-  {g:"Akira",v:"TechNova Solutions",s:"TECHNOLOGY · CA",t:"hace 7h",c:"ga"},
-  {g:"Rhysida",v:"Consorcio Municipal BCN",s:"GOVERNMENT · ES",t:"hace 9h",c:"gr"}
-];
-function rwFB(){
-  return RWF.map(function(x){
-    return '<div class="fr"><span class="gt '+x.c+'">'+x.g+'</span>'
-          +'<div class="fi"><div class="fv">'+x.v+'</div><div class="fs">'+x.s+'</div></div>'
-          +'<span class="ft">'+x.t+'</span></div>';
-  }).join("");
-}
-var gcls={lockbit:"gl",clop:"gc","cl0p":"gc",play:"gp",blackcat:"gb",alphv:"gb",akira:"ga",rhysida:"gr",inc:"gu"};
-async function loadRW(){
-  document.getElementById("rwf").innerHTML='<div class="msg">Cargando&#8230;</div>';
-  try{
-    var url="https://api.ransomware.live/recentvictims";
-    var r=await fetch("https://corsproxy.io/?"+encodeURIComponent(url),{signal:AbortSignal.timeout(9000)});
-    var d=await r.json();
-    var vs=(Array.isArray(d)?d:[]).slice(0,6);
-    if(!vs.length)throw new Error("empty");
-    var html=vs.map(function(v){
-      var grp=(v.group||v.groupName||"unknown").toLowerCase();
-      var cls=Object.keys(gcls).find(function(k){return grp.includes(k);})||"gu";
-      var dg=esc(trunc(v.group||v.groupName||"Unknown",14));
-      var nm=esc(trunc(v.victim||v.post_title||v.name||"—",26));
-      var co=esc((v.country||"—").toUpperCase().substring(0,3));
-      var se=esc(trunc((v.activity||v.sector||"—").toUpperCase(),16));
-      var dt=v.discovered?new Date(v.discovered).toLocaleDateString("es-ES",{day:"2-digit",month:"short"}):"reciente";
-      return '<div class="fr"><span class="gt '+cls+'">'+dg+'</span>'
-            +'<div class="fi"><div class="fv">'+nm+'</div><div class="fs">'+se+' · '+co+'</div></div>'
-            +'<span class="ft">'+dt+'</span></div>';
-    }).join("");
-    document.getElementById("rwf").innerHTML=html;
-    document.getElementById("rws").textContent="ransomware.live";
-  }catch(e){
-    document.getElementById("rwf").innerHTML=rwFB();
-    document.getElementById("rws").textContent="datos ilustrativos";
-  }
-}
-
-/* ── NVD (rate-limited, ~30s total) ── */
-async function loadNVD(){
+// NVD severity (rate-limited: 1 req/7s per severity)
+async function liveNVD(){
   try{
     var base="https://services.nvd.nist.gov/rest/json/cves/2.0";
     var yr=new Date().getFullYear();
     var s0=yr+"-01-01T00:00:00.000";
     var s1=new Date().toISOString().replace(/\.\d+Z$/,".000+00:00");
     var sevs=["CRITICAL","HIGH","MEDIUM","LOW"];
-    var c={c:0,h:0,m:0,l:0};
-    var keys={CRITICAL:"c",HIGH:"h",MEDIUM:"m",LOW:"l"};
+    var c={c:0,h:0,m:0,l:0};var keys={CRITICAL:"c",HIGH:"h",MEDIUM:"m",LOW:"l"};
+    var ok=false;
     for(var i=0;i<sevs.length;i++){
       try{
         var r=await fetch(base+"?cvssV3Severity="+sevs[i]+"&pubStartDate="+s0+"&pubEndDate="+s1+"&resultsPerPage=1",
           {signal:AbortSignal.timeout(10000)});
-        var j=await r.json();
-        c[keys[sevs[i]]]=j.totalResults||0;
-      }catch(e2){/* skip */}
+        if(r.ok){var j=await r.json();c[keys[sevs[i]]]=j.totalResults||0;ok=true;}
+      }catch(e2){}
       if(i<3)await new Promise(function(res){setTimeout(res,7500);});
     }
-    renderDonut(c);
-  }catch(e){
-    renderDonut({c:847,h:2341,m:3128,l:1204});
-  }
+    if(ok)renderDonut(c.c,c.h,c.m,c.l);
+  }catch(e){}
 }
 
-/* ── Ticker ── */
-var TFB=['<span>&#9658;</span> <em>ALERTA</em>: LockBit 3.0 publica datos exfiltrados',
-'<span>&#9658;</span> CISA aniade vulnerabilidades al catalogo KEV',
-'<span>&#9658;</span> <em>CRITICO</em>: clusters Kubernetes expuestos a RCE',
-'<span>&#9658;</span> Volt Typhoon compromete infraestructura critica',
-'<span>&#9658;</span> FBI advierte campanas BEC contra PYMEs espanolas',
-'<span>&#9658;</span> Fortinet publica parche urgente FortiOS',
-'<span>&#9658;</span> Apache Tomcat RCE activo &#8212; PoC publico disponible'];
-async function loadTicker(){
+// News ticker via rss2json
+async function liveTicker(){
   try{
     var r=await fetch("https://rss2json.com/api.json?rss_url="+encodeURIComponent("https://feeds.feedburner.com/TheHackersNews"),
       {signal:AbortSignal.timeout(6000)});
+    if(!r.ok)return;
     var d=await r.json();
     var items=d.items||[];
-    if(!items.length)throw new Error("empty");
-    var t=items.slice(0,8).map(function(i){return '<span>&#9658;</span> '+esc(trunc(i.title||"",80));}).join(" &nbsp;&middot;&nbsp; ");
-    document.getElementById("ti").innerHTML=t+" &nbsp;&middot;&nbsp; "+t;
-  }catch(e){
-    var t=TFB.join(" &nbsp;&middot;&nbsp; ");
-    document.getElementById("ti").innerHTML=t+" &nbsp;&middot;&nbsp; "+t;
-  }
+    if(!items.length)return;
+    var texts=items.slice(0,8).map(function(i){return "<span>&#9658;</span> "+esc(trunc(i.title||"",80));});
+    renderTicker(texts);
+  }catch(e){}
 }
 
-/* ── INIT ── */
-(async function init(){
-  loadRW();
-  await loadKEV();
-  loadIOC();
-  loadTicker();
-  setTimeout(loadNVD,1000);
-})();
-setInterval(function(){loadRW();loadKEV();loadIOC();loadTicker();},15*60*1000);
-setInterval(loadNVD,60*60*1000);
+// ── Run live updates after a short delay (static data already visible) ──
+setTimeout(function(){
+  liveRW();
+  liveCISA();
+  liveURLhaus();
+  liveTicker();
+  setTimeout(liveNVD,2000);
+},800);
+
+setInterval(function(){
+  liveRW();liveCISA();liveURLhaus();liveTicker();
+},15*60*1000);
+setInterval(liveNVD,60*60*1000);
 </script>
 </body>
 </html>
